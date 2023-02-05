@@ -8,11 +8,13 @@ import {
   MDBRow,
 } from "mdb-react-ui-kit";
 
+
+
 export const News = () => {
   const [news, setNews] = useState({});
-
+  const baseAPI =`https://localhost:44301/`
   useEffect(() => {
-    axios.get(`https://localhost:44301/api/News/`).then((res) => {
+    axios.get(baseAPI+`api/News/`).then((res) => {
       const news = res.data;
       setNews(news);
     });
@@ -34,7 +36,7 @@ export const News = () => {
                     rippleColor="light"
                   >
                     <img
-                      src={`https://localhost:44301/${e.image}`}
+                      src={baseAPI+`${e.image}`}
                       className="w-100"
                     />
                     <a href="#!">
@@ -53,7 +55,6 @@ export const News = () => {
                     <strong>{e.title}</strong>
                   </h4>
                   <p className="text-muted">{e.description}</p>
-                  <MDBBtn>Read More</MDBBtn>
                 </MDBCol>
               </MDBRow>
             </MDBCol>
