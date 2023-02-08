@@ -18,21 +18,19 @@ export const Home = () => {
       setUsers(newUsers);
     });
   }, []);
-  const newObj = Object.entries(users);
-  console.log(newObj);
   return (
     <>
-      <div className="col-xxl-12">
-        {Object.keys(users).map((id) => (
-          <div className="row">
-            <div className="col-xxl-6 mt-1 text-center">
-              <MDBCard key={users[id]}>
-                <div className="d-flex justify-content-center">
-                  <div className="col-xxl-2 text-center">
+      <div className='col-xxl-12'>
+        {Object.keys(users).map((id, index) => (
+          <div className='row'>
+            <div className='col-xxl-6 mt-1 text-center'>
+              <MDBCard key={index}>
+                <div className='d-flex justify-content-center'>
+                  <div className='col-xxl-2 text-center'>
                     <MDBCardImage
                       src={baseAPI + `${users[id].img}`}
-                      position="top"
-                      alt="..."
+                      position='top'
+                      alt='...'
                       width={100}
                       height={100}
                     />
@@ -41,7 +39,7 @@ export const Home = () => {
                 <MDBCardBody>
                   <MDBCardTitle> {users[id].name}</MDBCardTitle>
                   <MDBCardText>{users[id].email}</MDBCardText>
-                  <MDBBtn href="#">{users[id].role}</MDBBtn>
+                  <MDBBtn href='#'>{users[id].role}</MDBBtn>
                 </MDBCardBody>
               </MDBCard>
             </div>
