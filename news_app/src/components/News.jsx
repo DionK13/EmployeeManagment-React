@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "axios";  
 import {
   MDBBtn,
   MDBCol,
@@ -20,7 +20,6 @@ export const News = () => {
     });
   }, []);
 
-  console.log(news);
 
   return (
     <MDBContainer className="py-5">
